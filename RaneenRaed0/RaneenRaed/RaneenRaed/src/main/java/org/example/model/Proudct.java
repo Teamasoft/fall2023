@@ -60,11 +60,14 @@ public   class Proudct {
         return reserve;
     }
 
-    public Proudct() {
+    public Proudct(int i, String test_product, double v, String price, boolean b) {
 
     }
 
 
     public void setHouseId(int i) { this.id=i;
+    }
+
+    public void setProudctId(int i) {
     }
 }

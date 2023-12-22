@@ -22,7 +22,7 @@ public class InstallerList {
             installerList.add(installer);
         }
 
-        private InstallerList(){
+        public InstallerList(){
             //for code smell
         }
 

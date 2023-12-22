@@ -159,4 +159,7 @@ public class Users {
     public String getOpinion() {
         return opinion;
     }
+
+    public void setPersonalList(List<Integer> personalList) {
+    }
 }

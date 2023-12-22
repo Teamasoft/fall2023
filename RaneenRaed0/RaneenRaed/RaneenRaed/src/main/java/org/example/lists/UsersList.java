@@ -21,7 +21,7 @@ public class UsersList {
         usersList.add(user);
 
     }
-    private UsersList(){
+    public UsersList(){
         //for code smell
     }
 }
