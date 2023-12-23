@@ -17,7 +17,7 @@ public class MangeUsers {
         List<Users> usersList = UsersList.getUsersList();
 
         // Display all users' data
-        logger.info("Users Data:");
+        System.out.println("Users Data:");
         System.out.println(lama);
         System.out.printf("| %-20s | %-5s | %-15s | %-15s | %-7s |%n", "Name", "Age", "Majors", "Username", "Password");
         System.out.println(lama);
