@@ -19,7 +19,7 @@ public class MainLauncher {
 
     public void mainLauncher() {
 
-        ProductManagement productManagement = new ProductManagement();
+        ProductManagement productManagement = new ProductManagement();//w
         UseRegistration useRegistration = new UseRegistration();
         Users users = new Users();
         UserPay userPay = new UserPay();

@@ -12,7 +12,7 @@ public class ProductManagement {
     public ProductManagement() {}
 
     private static final Logger logger = Logger.getLogger(ProductManagement.class.getName());
-
+//w
     static {
         Logger rootLogger = Logger.getLogger("");
         Handler[] handlers = rootLogger.getHandlers();

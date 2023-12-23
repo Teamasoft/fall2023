@@ -87,7 +87,7 @@ public class Installer {
         public int getHouseID() {
             return houseID;
         }
-
+//w
         public void setHouseID(int houseID) {
             this.houseID = houseID;
         }

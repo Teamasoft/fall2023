@@ -7,7 +7,7 @@ public class Mnue {
     private static String enterChoice  = "Enter your choice: ";
     private static final Logger logger = Logger.getLogger(Mnue.class.getName());
     private Scanner scanner = new Scanner(System.in);
-
+//w
     static {
         // Set up custom log formatter to remove date and level from log messages
         Logger rootLogger = Logger.getLogger("");
