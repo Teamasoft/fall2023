@@ -1,4 +1,4 @@
-name: SonarCloud subhi
+name: SonarCloud 
 on:
   push:
     branches:
