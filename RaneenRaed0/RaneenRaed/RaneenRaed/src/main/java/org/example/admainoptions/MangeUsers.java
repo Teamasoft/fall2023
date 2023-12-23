@@ -1,30 +1,33 @@
 package org.example.admainoptions;
 
+import org.example.User.UserPay;
 import org.example.lists.UsersList;
 import org.example.model.Users;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MangeUsers {
-
+    private static final Logger logger = Logger.getLogger(MangeUsers.class.getName());
+    private static final String lama="--------------------------------------------------------------------";
     public void showAndEditUserData() {
         Scanner scanner = new Scanner(System.in);
 
         List<Users> usersList = UsersList.getUsersList();
 
         // Display all users' data
-        System.out.println("Users Data:");
-        System.out.println("--------------------------------------------------------------------");
+        logger.info("Users Data:");
+        System.out.println(lama);
         System.out.printf("| %-20s | %-5s | %-15s | %-15s | %-7s |%n", "Name", "Age", "Majors", "Username", "Password");
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println(lama);
 
         for (Users user : usersList) {
             System.out.printf("| %-20s | %-5d | %-15s | %-15s | %-7s |%n",
                     user.getName(), user.getAge(), user.getMajors(), user.getUserName(), user.getPassWord());
         }
 
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println(lama);
 
         // Ask if the admin wants to edit user data
         System.out.print("Do you want to edit any user data? (yes/no): ");
