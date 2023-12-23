@@ -60,7 +60,7 @@ public   class Proudct {
         return reserve;
     }
 
-    public Proudct(int i, String test_product, double v, String price, boolean b) {
+    public Proudct(int i, String testProduct, double v, String price, boolean b) {
 
     }
 
