@@ -12,7 +12,7 @@ public class Installer {
 
 
 
-        // Instance variables
+
         private static final Logger logger = Logger.getLogger(Installer.class.getName());
         private Mnue m = new Mnue();
 
@@ -83,7 +83,7 @@ public class Installer {
             }
         }
 
-        // Getters and setters
+
         public int getHouseID() {
             return houseID;
         }
