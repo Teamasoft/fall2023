@@ -12,7 +12,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
              <sonar.organization>teamasoft</sonar.organization>
+
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     </properties>
