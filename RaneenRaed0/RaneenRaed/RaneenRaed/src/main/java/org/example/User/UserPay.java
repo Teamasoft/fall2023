@@ -1,5 +1,6 @@
 package org.example.User;
 
+import org.example.Mnue;
 import org.example.lists.ProudctList;
 import org.example.lists.UsersList;
 import org.example.model.Proudct;
@@ -7,9 +8,10 @@ import org.example.model.Users;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class UserPay {
-
+    private static final Logger logger = Logger.getLogger(UserPay.class.getName());
     private static final String SUBHI="--------------------------------------------------------------------";
 
     public void buyProduct() {
@@ -18,11 +20,11 @@ public class UserPay {
         Scanner scanner = new Scanner(System.in);
 
         // Ask the user to enter product ID
-        System.out.print("Enter the ID of the product you want to buy: ");
+        logger.info("Enter the ID of the product you want to buy: ");
         int productId = scanner.nextInt();
 
         // Ask the user to enter username
-        System.out.print("Enter your username: ");
+        logger.info("Enter your username: ");
         String username = scanner.next();
 
         // Perform the buy operation based on the entered product ID and username
@@ -32,9 +34,9 @@ public class UserPay {
     private void displayAvailableProducts() {
         List<Proudct> proudctList = ProudctList.getProudctList();
 
-        System.out.println(SUBHI);
+        logger.info(SUBHI+"\n");
         System.out.printf("| %-4s | %-20s | %-10s | %-7s |%n", "ID", "Name", "Price", "Photo");
-        System.out.println(SUBHI);
+        logger.info(SUBHI+"\n");
 
         for (Proudct product : proudctList) {
             if (product.isReserve()) {
@@ -43,7 +45,7 @@ public class UserPay {
             }
         }
 
-        System.out.println(SUBHI);
+        logger.info(SUBHI+"\n");
     }
 
     private void performBuy(int productId, String username) {
@@ -66,17 +68,17 @@ public class UserPay {
                 // Ask for the user's opinion on the service
                 askForOpinion(username);
 
-                System.out.println("Congratulations, " + username + "! You have successfully bought " + product.getName());
+                logger.info("Congratulations, " + username + "! You have successfully bought " + product.getName()+"\n");
                 return;
             }
         }
 
-        System.out.println("Invalid product ID or the product is already reserved. Please try again.");
+        logger.info("Invalid product ID or the product is already reserved. Please try again.\n");
     }
 
     private void askForOpinion(String username) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Thank you for using our service, " + username + "! Please share your opinion (optional): ");
+        logger.info("Thank you for using our service, " + username + "! Please share your opinion (optional): ");
         String opinion = scanner.nextLine();
 
         // Update the user's personal list with their opinion
