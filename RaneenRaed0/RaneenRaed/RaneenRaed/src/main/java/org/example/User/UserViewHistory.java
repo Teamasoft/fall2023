@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserViewHistory {
+    private static final String KHALAF="--------------------------------------------------------------------";
 
     public void showUserPaidProducts() {
         Scanner scanner = new Scanner(System.in);
@@ -27,9 +28,9 @@ public class UserViewHistory {
                     System.out.println("You haven't purchased any products yet.");
                 } else {
                     System.out.println("Products you have purchased:");
-                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println(KHALAF);
                     System.out.printf("| %-4s | %-20s | %-10s | %-7s |%n", "ID", "Name", "Price", "Photo");
-                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println(KHALAF);
 
                     for (Integer productId : personalList) {
                         for (Proudct product : proudctList) {
@@ -41,7 +42,7 @@ public class UserViewHistory {
                         }
                     }
 
-                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println(KHALAF);
                 }
 
                 return;

@@ -9,7 +9,7 @@ import java.util.logging.*;
 
 public class ProductManagement {
 
-    public ProductManagement() {}
+    public ProductManagement() {} //default constructor
 
     private static final Logger logger = Logger.getLogger(ProductManagement.class.getName());
 //w

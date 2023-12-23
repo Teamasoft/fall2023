@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class UserPay {
 
+    private static final String SUBHI="--------------------------------------------------------------------";
+
     public void buyProduct() {
         displayAvailableProducts();
 
@@ -30,9 +32,9 @@ public class UserPay {
     private void displayAvailableProducts() {
         List<Proudct> proudctList = ProudctList.getProudctList();
 
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println(SUBHI);
         System.out.printf("| %-4s | %-20s | %-10s | %-7s |%n", "ID", "Name", "Price", "Photo");
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println(SUBHI);
 
         for (Proudct product : proudctList) {
             if (product.isReserve()) {
@@ -41,7 +43,7 @@ public class UserPay {
             }
         }
 
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println(SUBHI);
     }
 
     private void performBuy(int productId, String username) {
