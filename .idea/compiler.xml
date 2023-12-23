@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="fall2023" target="18" />
+      <module name="fall2023" target="17" />
       <module name="RaneenRaed" target="18" />
     </bytecodeTargetLevel>
   </component>
