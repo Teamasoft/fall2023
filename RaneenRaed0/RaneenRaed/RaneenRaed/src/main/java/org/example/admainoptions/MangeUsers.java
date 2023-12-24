@@ -1,6 +1,5 @@
 package org.example.admainoptions;
 
-
 import org.example.lists.UsersList;
 import org.example.model.Users;
 
@@ -10,32 +9,33 @@ import java.util.logging.Logger;
 
 public class MangeUsers {
     private static final Logger logger = Logger.getLogger(MangeUsers.class.getName());
-    private static final String lama="--------------------------------------------------------------------";
+    private static final String lama = "--------------------------------------------------------------------";
+
     public void showAndEditUserData() {
         Scanner scanner = new Scanner(System.in);
 
         List<Users> usersList = UsersList.getUsersList();
 
-        // Display all users' data
-        System.out.println("Users Data:");
-        System.out.println(lama);
-        System.out.printf("| %-20s | %-5s | %-15s | %-15s | %-7s |%n", "Name", "Age", "Majors", "Username", "Password");
-        System.out.println(lama);
+        // Log users' data
+        logger.info("Users Data:");
+        logger.info(lama);
+        logger.info(String.format("| %-20s | %-5s | %-15s | %-15s | %-7s |%n", "Name", "Age", "Majors", "Username", "Password"));
+        logger.info(lama);
 
         for (Users user : usersList) {
-            System.out.printf("| %-20s | %-5d | %-15s | %-15s | %-7s |%n",
-                    user.getName(), user.getAge(), user.getMajors(), user.getUserName(), user.getPassWord());
+            logger.info(String.format("| %-20s | %-5d | %-15s | %-15s | %-7s |%n",
+                    user.getName(), user.getAge(), user.getMajors(), user.getUserName(), user.getPassWord()));
         }
 
-        System.out.println(lama);
+        logger.info(lama);
 
         // Ask if the admin wants to edit user data
-        System.out.print("Do you want to edit any user data? (yes/no): ");
+        logger.info("Do you want to edit any user data? (yes/no): ");
         String choice = scanner.nextLine().toLowerCase();
 
         if (choice.equals("yes")) {
             // Ask for the username to edit
-            System.out.print("Enter the username you want to edit: ");
+            logger.info("Enter the username you want to edit: ");
             String username = scanner.nextLine();
 
             // Find the user with the given username
@@ -49,12 +49,12 @@ public class MangeUsers {
 
             if (userToEdit != null) {
                 // Ask which field to edit
-                System.out.println("Choose the field to edit:");
-                System.out.println("1. Name");
-                System.out.println("2. Age");
-                System.out.println("3. Majors");
-                System.out.println("4. Password");
-                System.out.print("Enter the field number: ");
+                logger.info("Choose the field to edit:");
+                logger.info("1. Name");
+                logger.info("2. Age");
+                logger.info("3. Majors");
+                logger.info("4. Password");
+                logger.info("Enter the field number: ");
 
                 int fieldChoice = scanner.nextInt();
                 scanner.nextLine(); // Consume the newline character
@@ -62,36 +62,36 @@ public class MangeUsers {
                 // Edit the chosen field
                 switch (fieldChoice) {
                     case 1:
-                        System.out.print("Enter the new name: ");
+                        logger.info("Enter the new name: ");
                         String newName = scanner.nextLine().trim();
                         userToEdit.setName(newName);
                         break;
                     case 2:
-                        System.out.print("Enter the new age: ");
+                        logger.info("Enter the new age: ");
                         int newAge = scanner.nextInt();
                         userToEdit.setAge(newAge);
                         break;
                     case 3:
-                        System.out.print("Enter the new majors: ");
+                        logger.info("Enter the new majors: ");
                         String newMajors = scanner.nextLine().trim();
                         userToEdit.setMajors(newMajors);
                         break;
                     case 4:
-                        System.out.print("Enter the new password: ");
+                        logger.info("Enter the new password: ");
                         String newPassword = scanner.nextLine().trim();
                         userToEdit.setPassWord(newPassword);
                         break;
                     default:
-                        System.out.println("Invalid field number.");
+                        logger.warning("Invalid field number.");
                         break;
                 }
 
-                System.out.println("User data updated successfully.");
+                logger.info("User data updated successfully.");
             } else {
-                System.out.println("User not found with the specified username.");
+                logger.warning("User not found with the specified username.");
             }
         } else {
-            System.out.println("No changes made.");
+            logger.info("No changes made.");
         }
     }
 }

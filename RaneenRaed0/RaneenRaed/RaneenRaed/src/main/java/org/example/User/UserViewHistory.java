@@ -7,14 +7,17 @@ import org.example.model.Users;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserViewHistory {
-    private static final String KHALAF="--------------------------------------------------------------------";
+    private static final Logger logger = Logger.getLogger(UserViewHistory.class.getName());
+    private static final String KHALAF = "--------------------------------------------------------------------";
 
     public void showUserPaidProducts() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your username: ");
+        logger.info("Enter your username: ");
         String username = scanner.nextLine();
 
         List<Users> usersList = UsersList.getUsersList();
@@ -25,30 +28,30 @@ public class UserViewHistory {
                 List<Integer> personalList = user.getPersonalList();
 
                 if (personalList.isEmpty()) {
-                    System.out.println("You haven't purchased any products yet.");
+                    logger.info("You haven't purchased any products yet.");
                 } else {
-                    System.out.println("Products you have purchased:");
-                    System.out.println(KHALAF);
-                    System.out.printf("| %-4s | %-20s | %-10s | %-7s |%n", "ID", "Name", "Price", "Photo");
-                    System.out.println(KHALAF);
+                    logger.info("Products you have purchased:");
+                    logger.info(KHALAF);
+                    logger.info(String.format("| %-4s | %-20s | %-10s | %-7s |%n", "ID", "Name", "Price", "Photo"));
+                    logger.info(KHALAF);
 
                     for (Integer productId : personalList) {
                         for (Proudct product : proudctList) {
                             if (product.getProudctId() == productId) {
-                                System.out.printf("| %-4d | %-20s | %-10s | %-7s |%n",
-                                        product.getProudctId(), product.getName(), product.getPrice(), product.getPhoto());
+                                logger.info(String.format("| %-4d | %-20s | %-10s | %-7s |%n",
+                                        product.getProudctId(), product.getName(), product.getPrice(), product.getPhoto()));
                                 break;
                             }
                         }
                     }
 
-                    System.out.println(KHALAF);
+                    logger.info(KHALAF);
                 }
 
                 return;
             }
         }
 
-        System.out.println("User not found. Please check your username.");
+        logger.warning("User not found. Please check your username.");
     }
 }

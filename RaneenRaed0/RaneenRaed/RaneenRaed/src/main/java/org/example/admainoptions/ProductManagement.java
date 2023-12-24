@@ -2,17 +2,23 @@ package org.example.admainoptions;
 
 import org.example.lists.ProudctList;
 import org.example.model.Proudct;
-//l
+
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.*;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class ProductManagement {
 
-    public ProductManagement() {} //default constructor
+    // Private constructor to prevent instantiation
+    public ProductManagement() {
+        throw new IllegalStateException("Utility class");
+    }
 
     private static final Logger logger = Logger.getLogger(ProductManagement.class.getName());
-//w
+
     static {
         Logger rootLogger = Logger.getLogger("");
         Handler[] handlers = rootLogger.getHandlers();
@@ -27,8 +33,6 @@ public class ProductManagement {
     }
 
     public static void manageProducts() {
-
-
         Scanner scanner = new Scanner(System.in);
         int choice;
 
@@ -70,7 +74,7 @@ public class ProductManagement {
     public static void addProduct() {
         Scanner scanner = new Scanner(System.in);
 
-showProductTable(ProudctList.getProudctList());
+        showProductTable(ProudctList.getProudctList());
 
         logger.info("Enter the product details:");
 
@@ -96,9 +100,6 @@ showProductTable(ProudctList.getProudctList());
     }
 
     public static void modifyProduct() {
-
-
-
         logger.info("Enter the product ID to modify:");
         Scanner scanner = new Scanner(System.in);
         int productId = scanner.nextInt();
@@ -200,3 +201,4 @@ showProductTable(ProudctList.getProudctList());
         logger.info("");
     }
 }
+
