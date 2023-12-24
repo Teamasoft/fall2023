@@ -6,10 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.model.Proudct;
 import org.example.lists.ProudctList;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProudctListTest {
+class ProudctListTest {
 
     private List<Proudct> originalProudctList;
 

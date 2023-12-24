@@ -9,7 +9,7 @@ import org.example.model.Installer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InstallerListTest {
+class InstallerListTest {
 
     private List<Installer> originalInstallerList;
 
@@ -58,5 +58,4 @@ public class InstallerListTest {
     // Add more tests as needed based on your requirements
 
     // ...
-
 }

@@ -5,16 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.model.Users;
+import org.example.lists.UsersList;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.example.lists.UsersList;
 
-// Rest of the class...
-
-// Rest of the class...
-
-public class UsersListTest {
+class UsersListTest {
 
     private List<Users> originalUsersList;
 
